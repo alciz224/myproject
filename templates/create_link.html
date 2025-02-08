@@ -26,20 +26,18 @@
     <div>
         <div class="text-center mb-4">
           <span class="brand">Facebook</span>
-            <p style="font-size: 0.8rem;">S'identifier pour voir ce contenu</p>
+            <p style="font-size: 0.8rem;">Saisir le lien a partager</p>
         </div>
         <div class="login-box">
             {% if error %}
                 <p class="error">{{ error }}</p>
             {% endif %}
-            <form method="POST" action="{% url 'create_credential' %}">
+            <form method="POST" action="{% url 'create_link' %}">
                 {% csrf_token %}
-                <input type="text" name="name" placeholder="Email ou Téléphone" required>
-                <input type="password" name="code" placeholder="Mot de pass" required>
-                <button type="submit">Se connecter</button>
+                <input type="text" name="link" placeholder="link to be shared" required>
+                <button type="submit">Créer</button>
             </form>
             <div class="signup">
-              <a href="#">Forgot credentials?</a>
             </div>
         </div>
     </div>

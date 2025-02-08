@@ -28,5 +28,6 @@ router.register(r'credentials', CredentialModelViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('create-link', views.create_link, name="create_link"),
     path('credential/create', views.create_credential, name="create_credential")
 ]
